@@ -320,7 +320,7 @@ interface VmSafe {
         address implementation;
     }
 
-    /// Represents a "potential" revert reason from a single subsequent call when using `vm.assumeNoReverts`.
+    /// Represents a "potential" revert reason from a single subsequent call when using `vm.assumeNoRevert`.
     /// Reverts that match will result in a FOUNDRY::ASSUME rejection, whereas unmatched reverts will be surfaced
     /// as normal.
     struct PotentialRevert {
@@ -688,7 +688,7 @@ interface VmSafe {
     /// Returns state diffs from current `vm.startStateDiffRecording` session, in json format.
     function getStateDiffJson() external view returns (string memory diff);
 
-    /// Returns an array of `StorageAccess` from current `vm.stateStateDiffRecording` session
+    /// Returns an array of `StorageAccess` from current `vm.startStateDiffRecording` session
     function getStorageAccesses() external view returns (StorageAccess[] memory storageAccesses);
 
     /// Returns an array of storage slots occupied by the specified variable.
